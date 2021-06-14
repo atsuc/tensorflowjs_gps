@@ -48,6 +48,7 @@ function startWebcam() {
 	if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
 		// スマホ・タブレット（iOS・Android）の場合
 		const promise = navigator.mediaDevices.getUserMedia(medias);
+		alert("smart phone");
 
 		promise.then(successCallback)
 			.catch(errorCallback);
