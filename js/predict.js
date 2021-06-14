@@ -53,7 +53,9 @@ function startWebcam() {
 			.catch(errorCallback);
 
 		function successCallback(stream) {
+			localStream = stream;
 			video.srcObject = stream;
+			video.play();
 		};
 
 		function errorCallback(err) {
