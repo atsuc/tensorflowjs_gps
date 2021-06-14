@@ -1,0 +1,58 @@
+html, body {
+	background-color: #f6f6f6;
+	margin: 0 auto;
+	font-family: monospace;
+}
+
+#title {
+	font-size: 160%;
+	margin-top: 20px;
+}
+
+#title small {
+	font-size: 80%;
+}
+
+#article {
+	margin: 0 20px;
+}
+
+.container-b {
+	margin: 20px 0;
+}
+
+.container-header {
+	margin: 5px 20px;
+}
+
+.container-image {
+	margin: 5px 20px;
+	background-color: #555;
+	width: 480px;
+}
+
+.container-info {
+	margin: 0 20px;
+	width: 40%;
+}
+
+.btn-group {
+	margin-right: 10px;
+}
+
+.output {
+	background-color: #555;
+	color: #f6f6f6;
+	margin-top: 20px;
+	padding: 1em 1em 0 1em;
+	border: solid 1px;
+	border-radius: 6px;
+}
+
+footer {
+	margin-top: 20px;
+}
+
+#mapid {
+	height: 150px;
+}
