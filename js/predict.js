@@ -102,6 +102,7 @@ $("#predict-button").click(function () {
 //-----------------------
 
 async function predict() {
+	var s_time = new Date();
 	let tensor = captureWebcam();
 
 	let prediction = await model.predict(tensor).data();
@@ -127,8 +128,10 @@ async function predict() {
 		//console.log(p.className,p.probability.toFixed(6))
 		//console.log(p)
 	});
-
-
+	var e_time = new Date();
+	var diff = e_time.getTime() - s_time.getTime();
+	//location_text += "<li>推論時間(ミリ秒):" + diff + "</li>";
+	$("#console").append(`<li>推論時間(ミリ秒) : ${diff}</li>`);
 
 };
 
@@ -176,6 +179,7 @@ var lon;
 var mymap;
 var addMarker = null;
 var is_init = true;
+var location_text = "";
 
 if (navigator.geolocation) {
 
@@ -184,9 +188,9 @@ if (navigator.geolocation) {
 
 		// 位置情報の取得を成功した場合
 		function (pos) {
-			var location = "<li>" + "緯度：" + pos.coords.latitude + "</li>";
-			location += "<li>" + "経度：" + pos.coords.longitude + "</li>";
-			document.getElementById("location").innerHTML = location;
+			location_text = "<li>" + "緯度：" + pos.coords.latitude + "</li>";
+			location_text += "<li>" + "経度：" + pos.coords.longitude + "</li>";
+			document.getElementById("location").innerHTML = location_text;
 			lat = pos.coords.latitude;
 			lon = pos.coords.longitude;
 			console.log(mymap)
