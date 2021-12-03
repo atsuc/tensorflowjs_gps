@@ -2,6 +2,7 @@ html, body {
 	background-color: #f6f6f6;
 	margin: 0 auto;
 	font-family: monospace;
+	font-size: 200%;
 }
 
 #title {
@@ -27,21 +28,21 @@ html, body {
 
 .container-image {
 	margin: 5px 20px;
-	width: 100%;
+	width: 360px;
 	background-color: #555;
 }
 
 .container-info {
 	margin: 0 20px;
-	width: 100%;
+	width: 40%;
 }
 
-@media screen and (min-width:1125px) { 
-	.container-image {
-		width: 360px;
+@media (orientation: portrait) { 
+	.container-image {		
+		width: 100%;
 	}
 	.container-info {
-		width: 40%;
+		width: 100%;
 	}
 }
 
