@@ -221,7 +221,9 @@ function captureWebcam() {
 	
 	var showcanvas = document.getElementById("showcanvas");
 	var showcontext = showcanvas.getContext('2d');
-	showcontext.drawImage(resultcanvas, 0, 0);
+	showcanvas.width = 360;
+	showcanvas.height = 240;
+	showcontext.drawImage(resultcanvas, 0, 0, 360, 240, 0, 0, 360, 240);
 
 	return resultcanvas.toDataURL("image/jpeg").split(',')[1];
 
