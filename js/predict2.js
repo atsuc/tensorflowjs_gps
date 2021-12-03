@@ -218,8 +218,13 @@ function captureWebcam() {
 		var crop_size_w = parseInt((w - after_croped_w) / 2)
 		resultcontext.drawImage(canvas, crop_size_w, 0, after_croped_w, h, 0, 0, 360, 240);
 	}
+	
+	var showcanvas = document.getElementById("showcanvas");
+	var showcontext = showcanvas.getContext('2d');
+	showcontext.drawImage(resultcanvas);
 
 	return resultcanvas.toDataURL("image/jpeg").split(',')[1];
+
 
 	//360 240
 	//tensor_image = preprocessImage(canvas);
