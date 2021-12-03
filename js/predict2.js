@@ -185,9 +185,21 @@ function send_data(){
 function captureWebcam() {
 	var canvas = document.createElement("canvas");
 	var context = canvas.getContext('2d');
+	if (window.innerHeight > window.innerWidth) {
+        /* 縦画面時の処理 */
+		canvas.width = 270;
+		canvas.height = 360;
+		context.drawImage(video, 0, 0, 270, 360);
+    }else{
+		canvas.width = 360;
+		canvas.height = 270;
+		context.drawImage(video, 0, 0, 360, 270);
+	}
+	/*
 	canvas.width = document.getElementById("main-stream-video").style.width;
 	canvas.height = document.getElementById("main-stream-video").style.height;
-	context.drawImage(video, 0, 0, document.getElementById("main-stream-video").style.width, document.getElementById("main-stream-video").style.height);
+	context.drawImage(video, 0, 0, video.width, video.height);
+	*/
 
 	var resultcanvas = document.getElementById("resultcanvas");
 	var resultcontext = resultcanvas.getContext('2d');
@@ -196,7 +208,6 @@ function captureWebcam() {
 
 	var w = canvas.width;
 	var h = canvas.height;
-	console.log(w)
 	var w_h_ratio = 1.5;
 	if(w / h < w_h_ratio){
 		var after_croped_h = parseInt(w / w_h_ratio);
