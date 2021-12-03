@@ -27,7 +27,6 @@ html, body {
 
 .container-image {
 	margin: 5px 20px;
-	background-color: #555;
 	width: 100%;
 }
 
@@ -39,7 +38,7 @@ html, body {
 @media screen and (min-width:480px) { 
 	/*　画面サイズが480pxからはここを読み込む　*/
 	.container-image {
-		width: 50%; /*360px;*/
+		width: 360px;
 	}
 	.container-info {
 		width: 40%;
