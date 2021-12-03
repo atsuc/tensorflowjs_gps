@@ -196,6 +196,7 @@ function captureWebcam() {
 
 	var w = canvas.width;
 	var h = canvas.height;
+	console.log(w)
 	var w_h_ratio = 1.5;
 	if(w / h < w_h_ratio){
 		var after_croped_h = parseInt(w / w_h_ratio);
