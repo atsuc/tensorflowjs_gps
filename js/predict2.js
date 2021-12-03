@@ -185,9 +185,9 @@ function send_data(){
 function captureWebcam() {
 	var canvas = document.createElement("canvas");
 	var context = canvas.getContext('2d');
-	canvas.width = video.style.width;
-	canvas.height = video.style.height;
-	context.drawImage(video, 0, 0, video.width, video.height);
+	canvas.width = document.getElementById("main-stream-video").style.width;
+	canvas.height = document.getElementById("main-stream-video").style.height;
+	context.drawImage(video, 0, 0, document.getElementById("main-stream-video").style.width, document.getElementById("main-stream-video").style.height);
 
 	var resultcanvas = document.getElementById("resultcanvas");
 	var resultcontext = resultcanvas.getContext('2d');
