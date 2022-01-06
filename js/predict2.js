@@ -42,8 +42,8 @@ function startWebcam() {
 
 	if (window.innerHeight > window.innerWidth) {
         /* 縦画面時の処理 */
-		$('#main-stream-video').width(270); 
-		$('#main-stream-video').height(360); 
+		$('#main-stream-video').width(540); 
+		$('#main-stream-video').height(720); 
     }
 
 	video = $('#main-stream-video').get(0);
